@@ -193,3 +193,26 @@ label {
   }
 }
 
+/* Slider Dots Styles */
+.custom-dots {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-dots li {
+    margin: 0 4px;
+}
+
+.custom-dots li.slick-active span {
+    opacity: 1 !important;
+    background-color: #F6F6F6 !important;
+}
+

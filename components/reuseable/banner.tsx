@@ -14,6 +14,20 @@ export default function Banner({ sliderImages, rightImages }: BannerProps) {
     const [showModal, setShowModal] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+    const CustomDot = ({ onClick, active }: { onClick?: () => void; active: boolean }) => {
+        return (
+            <span
+                className={`inline-block w-3 h-3 mx-2 rounded-full cursor-pointer`}
+                style={{ 
+                    backgroundColor: '#F6F6F6',
+                    opacity: active ? 1 : 0.3,
+                    transition: 'all 0.3s ease'
+                }}
+                onClick={onClick}
+            />
+        );
+    };
+
     const settings = {
         dots: true,
         infinite: true,
@@ -22,6 +36,24 @@ export default function Banner({ sliderImages, rightImages }: BannerProps) {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 4000,
+        appendDots: (dots: React.ReactNode) => (
+            <div
+                style={{
+                    position: 'absolute',
+                    bottom: '30px',
+                    width: '100%',
+                    padding: '0',
+                    margin: '0',
+                    listStyle: 'none',
+                    textAlign: 'center',
+                    zIndex: 1
+                }}
+            >
+                {dots}
+            </div>
+        ),
+        customPaging: () => <CustomDot active={false} />,
+        dotsClass: 'slick-dots custom-dots'
     };
 
     const modalSettings = {
@@ -29,9 +61,9 @@ export default function Banner({ sliderImages, rightImages }: BannerProps) {
         initialSlide: currentImageIndex,
         autoplay: false
     };
+
     return (
         <>
-
             <div className="relative container px-4 sm:px-[40px]">
                 <div className='w-full flex flex-col lg:flex-row justify-between items-stretch gap-4 py-10'>
                     {/* left side  */}

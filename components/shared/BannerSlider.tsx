@@ -6,6 +6,7 @@ export default function BannerSlider() {
     const sliderImages = [
         "/image/banner/imageSlider1.png",
         "/image/banner/imageSlider1.png",
+        "/image/banner/imageSlider1.png",
         "/image/banner/imageSlider1.png"
     ];
 
