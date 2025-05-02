@@ -1,10 +1,11 @@
-import BannerSlider from "@/components/shared/BannerSlider";
+import HomePage from "@/components/home/home";
+
 
 
 export default function Home() {
   return (
     <div className="bg-[#F6F6F6]">
-      <BannerSlider />
+      <HomePage />
     </div>
   );
 }

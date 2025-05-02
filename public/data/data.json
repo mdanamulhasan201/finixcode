@@ -1,0 +1,359 @@
+[
+  {
+    "id": 1,
+    "title": "Road to the Football Finals",
+    "location": "Bashundhara Sports Complex",
+    "time": "2025-05-02 10:00:00-12:00:00",
+    "eventPrice": 320,
+    "spotsLeft": 6,
+    "Info": [
+      {
+        "id": 1,
+        "title": "Football ,Relay ,Tennis ,Cricket",
+        "gender": "Female",
+        "age": "Below 25",
+        "type": "Beginner",
+        "about": "Learn about the capital’s first beavers in 400 years from the Ealing Beaver project, make your own mushroom growing starter kit with urban agriculture experts, before joining Roma the Engineer to get into the nuts and bolts of tomorrow’s high-rise buildings.",
+        "location": "Jean Baptiste Point du Sable Lake Shore Drive, Chicago, Illinois",
+        "map": "https://maps.app.goo.gl/aP9sf65KViMVxCRL7",
+        "Highlights": [
+          {
+            "id": 1,
+            "date": "Mon, 2 Dec",
+            "time": "7.30 AM - 8.30 AM",
+            "Arrive": "Arrive 15 min before start",
+            "Venue": "Venue booked"
+          }
+        ],
+        "Refund": [
+          {
+            "id": 1,
+            "title": "Full refund if host cancels the game"
+          },
+          {
+            "id": 2,
+            "title": "Full refund if you cancel 24+ hours in advance"
+          },
+          {
+            "id": 3,
+            "title": "Full refund if game is cancelled due to low attendance"
+          }
+        ],
+        "Hosted by": [
+          {
+            "id": 1,
+            "name": "Alex Mercer",
+            "activities hosted": "23",
+            "host rating": "4.5",
+            "image": "/image/banner/imageSlider1.png",
+            "description": "Hosted by"
+          }
+        ]
+      }
+    ],
+
+    "Player": [
+      {
+        "id": 1,
+        "name": "Alex Mercer",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 2,
+        "name": "Jamir Uddin",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 3,
+        "name": "Biplu Ahmed",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 4,
+        "name": "Topu Barman",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 5,
+        "name": "Rakib Hossain",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      }
+    ],
+
+    "bannerImage": [
+      {
+        "id": 1,
+        "image": "/image/banner/imageSlider1.png"
+      },
+      {
+        "id": 2,
+        "image": "/image/banner/imageSlider1.png"
+      },
+      {
+        "id": 3,
+        "image": "/image/banner/imageSlider1.png"
+      },
+      {
+        "id": 4,
+        "image": "/image/banner/imageSlider1.png"
+      }
+    ],
+    "rightImage": [
+      {
+        "id": 1,
+        "image": "/image/banner/image1.png"
+      },
+      {
+        "id": 2,
+        "image": "/image/banner/image1.png"
+      },
+      {
+        "id": 3,
+        "image": "/image/banner/image1.png"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Chasing Glory: Football Showdown",
+    "location": "Bashundhara Sports Complex",
+    "time": "2025-05-02 10:00:00-12:00:00",
+    "eventPrice": 320,
+    "spotsLeft": 2,
+    "Info": [
+      {
+        "id": 1,
+        "title": "Football ,Relay ,Tennis ,Cricket",
+        "gender": "Female",
+        "age": "Below 25",
+        "type": "Advanced",
+        "about": "Learn about the capital’s first beavers in 400 years from the Ealing Beaver project, make your own mushroom growing starter kit with urban agriculture experts, before joining Roma the Engineer to get into the nuts and bolts of tomorrow’s high-rise buildings.",
+        "location": "Jean Baptiste Point du Sable Lake Shore Drive, Chicago, Illinois",
+        "map": "https://maps.app.goo.gl/aP9sf65KViMVxCRL7",
+        "Highlights": [
+          {
+            "id": 1,
+            "date": "Mon, 2 Dec",
+            "time": "7.30 AM - 8.30 AM",
+            "Arrive": "Arrive 15 min before start",
+            "Venue": "Venue booked"
+          }
+        ],
+        "Refund": [
+          {
+            "id": 1,
+            "title": "Full refund if host cancels the game"
+          },
+          {
+            "id": 2,
+            "title": "Full refund if you cancel 24+ hours in advance"
+          },
+          {
+            "id": 3,
+            "title": "Full refund if game is cancelled due to low attendance"
+          }
+        ],
+        "Hosted by": [
+          {
+            "id": 1,
+            "name": "Alex Mercer",
+            "activities hosted": "23",
+            "host rating": "4.5",
+            "image": "/image/banner/imageSlider1.png",
+            "description": "Hosted by"
+          }
+        ]
+      }
+    ],
+
+    "Player": [
+      {
+        "id": 1,
+        "name": "Alex Mercer",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 2,
+        "name": "Jamir Uddin",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 3,
+        "name": "Biplu Ahmed",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 4,
+        "name": "Topu Barman",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 5,
+        "name": "Rakib Hossain",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      }
+    ],
+
+    "bannerImage": [
+      {
+        "id": 1,
+        "image": "/image/banner/slider2.png"
+      },
+      {
+        "id": 2,
+        "image": "/image/banner/slider2.png"
+      },
+      {
+        "id": 3,
+        "image": "/image/banner/slider2.png"
+      },
+      {
+        "id": 4,
+        "image": "/image/banner/slider2.png"
+      }
+    ],
+    "rightImage": [
+      {
+        "id": 1,
+        "image": "/image/banner/slider2.png"
+      },
+      {
+        "id": 2,
+        "image": "/image/banner/slider2.png"
+      },
+      {
+        "id": 3,
+        "image": "/image/banner/slider2.png"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "United We Play, United Win",
+    "location": "Bashundhara Sports Complex",
+    "time": "2025-05-02 10:00:00-12:00:00",
+    "eventPrice": 320,
+    "spotsLeft": 6,
+    "Info": [
+      {
+        "id": 1,
+        "title": "Football ,Relay ,Tennis ,Cricket",
+        "gender": "Female",
+        "age": "Below 25",
+        "type": "Advanced",
+        "about": "Learn about the capital’s first beavers in 400 years from the Ealing Beaver project, make your own mushroom growing starter kit with urban agriculture experts, before joining Roma the Engineer to get into the nuts and bolts of tomorrow’s high-rise buildings.",
+        "location": "Jean Baptiste Point du Sable Lake Shore Drive, Chicago, Illinois",
+        "map": "https://maps.app.goo.gl/aP9sf65KViMVxCRL7",
+        "Highlights": [
+          {
+            "id": 1,
+            "date": "Mon, 2 Dec",
+            "time": "7.30 AM - 8.30 AM",
+            "Arrive": "Arrive 15 min before start",
+            "Venue": "Venue booked"
+          }
+        ],
+        "Refund": [
+          {
+            "id": 1,
+            "title": "Full refund if host cancels the game"
+          },
+          {
+            "id": 2,
+            "title": "Full refund if you cancel 24+ hours in advance"
+          },
+          {
+            "id": 3,
+            "title": "Full refund if game is cancelled due to low attendance"
+          }
+        ],
+        "Hosted by": [
+          {
+            "id": 1,
+            "name": "Alex Mercer",
+            "activities hosted": "23",
+            "host rating": "4.5",
+            "image": "/image/banner/imageSlider1.png",
+            "description": "Hosted by"
+          }
+        ]
+      }
+    ],
+
+    "Player": [
+      {
+        "id": 1,
+        "name": "Alex Mercer",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 2,
+        "name": "Jamir Uddin",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 3,
+        "name": "Biplu Ahmed",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 4,
+        "name": "Topu Barman",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      },
+      {
+        "id": 5,
+        "name": "Rakib Hossain",
+        "image": "/image/banner/imageSlider1.png",
+        "description": "Player"
+      }
+    ],
+
+    "bannerImage": [
+      {
+        "id": 1,
+        "image": "/image/banner/slider3.png"
+      },
+      {
+        "id": 2,
+        "image": "/image/banner/slider3.png"
+      },
+      {
+        "id": 3,
+        "image": "/image/banner/slider3.png"
+      },
+      {
+        "id": 4,
+        "image": "/image/banner/slider3.png"
+      }
+    ],
+    "rightImage": [
+      {
+        "id": 1,
+        "image": "/image/banner/slider3.png"
+      },
+      {
+        "id": 2,
+        "image": "/image/banner/slider3.png"
+      },
+      {
+        "id": 3,
+        "image": "/image/banner/slider3.png"
+      }
+    ]
+  }
+]

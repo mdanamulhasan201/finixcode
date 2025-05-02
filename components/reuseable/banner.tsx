@@ -64,7 +64,7 @@ export default function Banner({ sliderImages, rightImages }: BannerProps) {
 
     return (
         <>
-            <div className="relative container px-4 sm:px-[40px]">
+            <div className="relative container px-4 sm:px-[25px]">
                 <div className='w-full flex flex-col lg:flex-row justify-between items-stretch gap-4 py-10'>
                     {/* left side  */}
                     <div className='w-full lg:w-7/12 h-[300px] sm:h-[400px] lg:h-[500px]'>
