@@ -1,6 +1,49 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Font Face Declarations */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 .container {
@@ -139,9 +182,11 @@ label {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    font-family: 'Satoshi', sans-serif;
   }
   body {
     @apply bg-background text-foreground;
