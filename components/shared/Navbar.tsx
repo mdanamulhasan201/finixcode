@@ -25,7 +25,7 @@ export default function Navbar() {
 
     return (
         <div className="bg-white">
-            <div className="container py-4 px-4 flex items-center justify-between">
+            <div className="container py-4 px-4 sm::px-[40px] flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center">
                     <div>

@@ -1,9 +1,10 @@
+import BannerSlider from "@/components/shared/BannerSlider";
 
 
 export default function Home() {
   return (
-    <div>
-      this is my home page
+    <div className="bg-[#F6F6F6]">
+      <BannerSlider />
     </div>
   );
 }
