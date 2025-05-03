@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { MdAccessTime, MdOutlineDateRange, MdOutlineLocationOn } from 'react-icons/md';
 import { TbAntennaBars5, TbAntennaBars3 } from 'react-icons/tb';
 import MessageModal from '../shared/MessageModal';
+import ProfileModal from '../shared/ProfileModal';
 
 interface InfoPageProps {
     currentEvent: BannerData;
@@ -21,7 +22,8 @@ interface HostData {
 
 export default function InfoPage({ currentEvent }: InfoPageProps) {
     const [expandedAbout, setExpandedAbout] = useState<{ [key: string | number]: boolean }>({});
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isMessageModalOpen, setIsMessageModalOpen] = useState(false);
+    const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
     const [selectedHost, setSelectedHost] = useState<HostData | null>(null);
 
     const getFirstTwoWords = (text: string) => {
@@ -37,12 +39,17 @@ export default function InfoPage({ currentEvent }: InfoPageProps) {
 
     const handleMessageClick = (host: HostData) => {
         setSelectedHost(host);
-        setIsModalOpen(true);
+        setIsMessageModalOpen(true);
+    };
+
+    const handleViewProfile = (host: HostData) => {
+        setSelectedHost(host);
+        setIsProfileModalOpen(true);
     };
 
     const handleSendMessage = (message: string) => {
         console.log('Sending message to host:', selectedHost?.name, 'Message:', message);
-        setIsModalOpen(false);
+        setIsMessageModalOpen(false);
     };
 
     return (
@@ -96,7 +103,7 @@ export default function InfoPage({ currentEvent }: InfoPageProps) {
                                 <p className="font-medium">NDE Field</p>
                                 <p className="text-gray-700">{info.location}</p>
                             </div>
-                            <Link href={info.map} target='_blank' className='text-[#4E566B] border border-[#4E566B] text-[16px] font-[500] px-[16px] py-[12px] rounded-[99px]'>Open maps</Link>
+                            <Link href={info.map} target='_blank' className='text-[#4E566B] border cursor-pointer hover:text-[#DA6049] transform duration-300 border-[#4E566B] text-[16px] font-[500] px-[16px] py-[12px] rounded-[99px]'>Open maps</Link>
                         </div>
                     </div>
 
@@ -141,7 +148,7 @@ export default function InfoPage({ currentEvent }: InfoPageProps) {
                                     ))}
                                 </ul>
                                 <div className='flex justify-end items-center'>
-                                    <button className="text-white mt-2 ">Learn more</button>
+                                    <button className="text-white cursor-pointer mt-2 ">Learn more</button>
                                 </div>
                             </div>
                         </div>
@@ -169,11 +176,14 @@ export default function InfoPage({ currentEvent }: InfoPageProps) {
                                 <div className="flex flex-col md:flex-row gap-2 md:ml-auto md:space-x-2 w-full md:w-auto">
                                     <button 
                                         onClick={() => handleMessageClick(host)}
-                                        className="w-full md:w-auto px-[24px] py-[10px] border border-gray-300 bg-[#FDE8CD] rounded-full text-[14px] md:text-[16px] font-[500]"
+                                        className="w-full cursor-pointer md:w-auto px-[24px] py-[10px] border border-gray-300 bg-[#FDE8CD] hover:bg-[#fde8cdc8] transform duration-300 rounded-full text-[14px] md:text-[16px] font-[500]"
                                     >
                                         Message
                                     </button>
-                                    <button className="w-full md:w-auto px-[24px] py-[10px] border text-white border-[#FDE8CD] rounded-full text-[14px] md:text-[16px] font-[500]">
+                                    <button 
+                                        onClick={() => handleViewProfile(host)}
+                                        className="w-full cursor-pointer md:w-auto px-[24px] py-[10px] border text-white border-[#FDE8CD] hover:bg-[#fde8cdc8] transform duration-300 hover:text-white rounded-full text-[14px] md:text-[16px] font-[500]"
+                                    >
                                         View profile
                                     </button>
                                 </div>
@@ -184,10 +194,16 @@ export default function InfoPage({ currentEvent }: InfoPageProps) {
             ))}
 
             <MessageModal 
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
+                isOpen={isMessageModalOpen}
+                onClose={() => setIsMessageModalOpen(false)}
                 onSend={handleSendMessage}
                 recipientName={selectedHost?.name || ''}
+            />
+
+            <ProfileModal
+                isOpen={isProfileModalOpen}
+                onClose={() => setIsProfileModalOpen(false)}
+                hostData={selectedHost}
             />
         </div>
     );
