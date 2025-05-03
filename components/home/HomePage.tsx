@@ -4,14 +4,15 @@ import Banner from '../reuseable/banner'
 import data from '../../public/data/data.json'
 import { AllEventData, BannerData } from '@/types'
 import { formatEventTime } from '@/utils/dateFormat'
-import { IoShareOutline } from "react-icons/io5"
-import { FaRegHeart } from "react-icons/fa"
+import { FaRegHeart, FaHeart } from "react-icons/fa"
 import JoinEventDropdown from '../reuseable/JoinEventDropdown'
 import MoreOptionsDropdown from '../reuseable/MoreOptionsDropdown'
 import InfoPage from './InfoPage'
 import PlayerPage from './PlayerPage'
 import CommentsPage from './CommentsPage'
 import EventCarousel from '../reuseable/EventCarousel'
+import toast from 'react-hot-toast'
+import ShareDropdown from '../reuseable/ShareDropdown'
 
 export default function HomePage() {
     const [eventData, setEventData] = useState<AllEventData>({
@@ -23,6 +24,7 @@ export default function HomePage() {
         allEvents: []
     });
     const [activeTab, setActiveTab] = useState<'Info' | 'Player' | 'Comments'>('Info');
+    const [isFavorite, setIsFavorite] = useState(false);
 
     useEffect(() => {
         try {
@@ -134,11 +136,37 @@ export default function HomePage() {
                                     {eventData.currentEvent?.title}
                                 </h2>
                                 <div className='flex items-center gap-2'>
-                                    <button className='w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50'>
-                                        <IoShareOutline className="w-5 h-5 text-gray-700" />
-                                    </button>
-                                    <button className='w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50'>
-                                        <FaRegHeart className="w-5 h-5 text-gray-700" />
+                                    <ShareDropdown />
+                                    <button 
+                                        className='w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50'
+                                        onClick={() => {
+                                            setIsFavorite(!isFavorite);
+                                            if (!isFavorite) {
+                                                toast.success('Added to favorites!', {
+                                                    duration: 2000,
+                                                    position: 'top-right',
+                                                    style: {
+                                                        background: '#34735F',
+                                                        color: '#fff',
+                                                    },
+                                                });
+                                            } else {
+                                                toast.success('Removed from favorites!', {
+                                                    duration: 2000,
+                                                    position: 'top-right',
+                                                    style: {
+                                                        background: '#DA6049',
+                                                        color: '#fff',
+                                                    },
+                                                });
+                                            }
+                                        }}
+                                    >
+                                        {isFavorite ? (
+                                            <FaHeart className="w-5 h-5 text-red-500" />
+                                        ) : (
+                                            <FaRegHeart className="w-5 h-5 text-gray-700" />
+                                        )}
                                     </button>
                                     <MoreOptionsDropdown />
                                 </div>
