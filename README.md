@@ -94,10 +94,7 @@ The main application code is in the `app` directory. Key files and directories i
   - @radix-ui/react-dialog
   - @radix-ui/react-popover
   - @radix-ui/react-slot
-- **class-variance-authority** - For managing component variants
-- **clsx & tailwind-merge** - For conditional CSS classes
-- **Lucide React** - Beautiful icons
-- **React Icons** - Comprehensive icon library
+
 
 ### Functionality & Features
 - **date-fns** - Modern JavaScript date utility library
@@ -105,18 +102,5 @@ The main application code is in the `app` directory. Key files and directories i
 - **react-hot-toast** - For beautiful notifications
 - **react-day-picker** - For date picking functionality
 
-### Development Tools
-- **ESLint** - For code linting
-- **TurboRepo** - For development optimization
-- **tw-animate-css** - For Tailwind animations
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 
