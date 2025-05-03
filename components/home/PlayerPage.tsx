@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BannerData, PlayerItem } from '@/types';
+import { BannerData, PlayerItem } from '../../types';
 import { FaUsers } from 'react-icons/fa';
 import MessageModal from '../shared/MessageModal';
 

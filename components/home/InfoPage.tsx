@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { BannerData } from '@/types';
+import { BannerData } from '../../types';
 import { useState } from 'react';
 import Link from 'next/link';
 import { MdAccessTime, MdOutlineDateRange, MdOutlineLocationOn } from 'react-icons/md';
