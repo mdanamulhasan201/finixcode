@@ -120,8 +120,8 @@ export default function HomePage() {
                         </div>
                     </div>
                     {/* right side */}
-                    <div className='w-full lg:w-4/12'>
-                        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 min-w-[400px]">
+                    <div className='w-full lg:w-4/12 mt-2 lg:mt-0'>
+                        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 md:min-w-[400px]">
                             <div className="flex justify-between items-center mb-3 border py-[18px] px-4 border-[#E5E5E5] p-2 rounded-[16px]">
                                 <span className="text-red-500 text-[16px] font-[500]">
                                     {eventData.currentEvent?.spotsLeft} spots left
@@ -143,7 +143,7 @@ export default function HomePage() {
 
             {/* tab section */}
             <div className="container w-full px-4 sm:px-[40px] py-6">
-                <div className='flex flex-col gap-4 w-7/12'>
+                <div className='flex flex-col gap-4 w-full md:w-7/12'>
                     {/* Tab Navigation */}
                     <div className="border-b border-gray-200">
                         <div className="flex -mb-px">

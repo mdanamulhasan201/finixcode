@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { BannerData, PlayerItem } from '@/types';
+import { FaUsers } from 'react-icons/fa';
 
 interface PlayerPageProps {
     currentEvent: BannerData;
@@ -17,7 +18,6 @@ export default function PlayerPage({ currentEvent }: PlayerPageProps) {
     };
 
     const handleSendMessage = () => {
-        // Here you can implement the logic to send the message
         console.log('Sending message to:', selectedPlayer?.name, 'Message:', message);
         setMessage('');
         setIsModalOpen(false);
@@ -27,7 +27,10 @@ export default function PlayerPage({ currentEvent }: PlayerPageProps) {
         <div className="space-y-4">
             <div className="flex justify-between items-center mb-4">
                 <h3 className="text-xl font-semibold">Players</h3>
-                <span className="text-sm font-medium">5/11</span>
+                <div className='flex items-center gap-2'>
+                    <FaUsers />
+                    <span className="text-sm font-medium">5/11</span>
+                </div>
             </div>
             <div className="space-y-5">
                 {currentEvent?.Player?.map((player) => (
@@ -40,7 +43,7 @@ export default function PlayerPage({ currentEvent }: PlayerPageProps) {
                                 {player.name} {player.id === 1 && <span className="text-xs text-amber-300">(Host)</span>}
                             </span>
                         </div>
-                        <button 
+                        <button
                             onClick={() => handleMessageClick(player)}
                             className="bg-white text-[#171717] px-[14px] py-[10px]  text-sm font-medium rounded-[12px]"
                         >
