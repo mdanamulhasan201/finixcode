@@ -11,6 +11,7 @@ import MoreOptionsDropdown from '../reuseable/MoreOptionsDropdown'
 import InfoPage from './InfoPage'
 import PlayerPage from './PlayerPage'
 import CommentsPage from './CommentsPage'
+import EventCarousel from '../reuseable/EventCarousel'
 
 export default function HomePage() {
     const [eventData, setEventData] = useState<AllEventData>({
@@ -57,6 +58,37 @@ export default function HomePage() {
             console.error('Error processing data:', error);
         }
     }, []);
+
+    useEffect(() => {
+        console.log('All events:', eventData.allEvents);
+        console.log('Current event:', eventData.currentEvent);
+        console.log('Filtered events:', eventData.allEvents.filter(event => event.id !== eventData.currentEvent?.id));
+    }, [eventData]);
+
+    const handleEventSelect = (selectedEvent: BannerData) => {
+        const bannerImages = selectedEvent.bannerImage
+            .map(item => item.image)
+            .filter(img => img && img.trim() !== "");
+
+        const rightImages = selectedEvent.rightImage
+            .map(item => item.image)
+            .filter(img => img && img.trim() !== "");
+
+        setEventData(prev => ({
+            ...prev,
+            currentEvent: selectedEvent,
+            allImages: {
+                bannerImages,
+                rightImages
+            }
+        }));
+        
+        // Reset to Info tab when switching events
+        setActiveTab('Info');
+        
+        // Scroll to top of the page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     const handleJoinEvent = () => {
         console.log('Joining event...');
@@ -186,6 +218,12 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
+
+            {/* Event Carousel */}
+            <EventCarousel 
+                events={eventData.allEvents} 
+                onEventSelect={handleEventSelect}
+            />
         </div>
     )
 }
