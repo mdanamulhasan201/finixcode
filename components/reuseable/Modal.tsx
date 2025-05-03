@@ -19,8 +19,8 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
             
             {/* Modal */}
             <div className="fixed inset-0 z-50 overflow-y-auto">
-                <div className="flex min-h-full items-center justify-center p-4">
-                    <div className="relative transform overflow-hidden bg-[#34735F] rounded-xl shadow-xl transition-all w-full max-w-[400px] p-[32px]">
+                <div className="flex min-h-full items-center justify-center">
+                    <div className="relative transform overflow-hidden bg-[#34735F] rounded-xl shadow-xl transition-all w-full max-w-[350px] py-[28px]">
                         <div className="absolute right-3 top-3">
                             <button
                                 onClick={onClose}

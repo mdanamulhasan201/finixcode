@@ -32,7 +32,7 @@ export default function JoinEventDropdown({ onJoin, className }: JoinEventDropdo
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-[22px] font-semibold text-center text-[#F8E4C9] mb-5">Choose Payment Method</h3>
+                    <h3 className="text-[32px] font-semibold text-center text-[#FDE8CD] mb-5">Choose Payment Method</h3>
 
                     {/* Options */}
                     <div className="space-y-2">
