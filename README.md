@@ -51,15 +51,7 @@ yarn build
 pnpm build
 ```
 
-To start the production server:
 
-```bash
-npm run start
-# or
-yarn start
-# or
-pnpm start
-```
 
 ### Additional Scripts
 
