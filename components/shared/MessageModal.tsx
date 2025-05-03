@@ -18,8 +18,8 @@ export default function MessageModal({ isOpen, onClose, onSend, recipientName }:
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black/40 bg-opacity-50 flex items-center justify-center">
-            <div className="bg-white p-6 rounded-lg w-96">
+        <div className="fixed inset-0 bg-black/40 bg-opacity-50 flex items-center justify-center z-[9999]">
+            <div className="bg-white p-6 rounded-lg w-96 relative">
                 <h3 className="text-lg font-semibold mb-4">
                     Send message to {recipientName}
                 </h3>

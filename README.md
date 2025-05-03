@@ -1,8 +1,34 @@
+# Finixcode Project
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Prerequisites
 
-First, run the development server:
+Before you begin, ensure you have the following installed on your system:
+- [Node.js](https://nodejs.org/) (version 18 or higher recommended)
+- npm (comes with Node.js) or [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/)
+
+## Setup Instructions
+
+1. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   cd finixcode
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+## Running the Application
+
+### Development Mode
+To run the application in development mode with hot-reload:
 
 ```bash
 npm run dev
@@ -10,15 +36,50 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
+To create a production build:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+```
+
+To start the production server:
+
+```bash
+npm run start
+# or
+yarn start
+# or
+pnpm start
+```
+
+### Additional Scripts
+
+- `npm run lint` - Run ESLint to check code quality
+- `npm run vercel-build` - Special build script for Vercel deployment
+
+## Project Structure
+
+The main application code is in the `app` directory. Key files and directories include:
+- `app/page.tsx` - Main page component
+- `app/components/` - Reusable React components
+- `app/styles/` - CSS and styling files
+
+## Features
+
+- Modern UI components using Radix UI
+- Responsive design with Tailwind CSS
+- Date handling with date-fns
+- Carousel functionality with react-slick
+- Toast notifications with react-hot-toast
 
 ## Learn More
 
