@@ -13,7 +13,7 @@
         "gender": "Female",
         "age": "Below 25",
         "type": "Beginner",
-        "about": "Learn about the capital’s first beavers in 400 years from the Ealing Beaver project, make your own mushroom growing starter kit with urban agriculture experts, before joining Roma the Engineer to get into the nuts and bolts of tomorrow’s high-rise buildings.",
+        "about": "Learn about the capital's first beavers in 400 years from the Ealing Beaver project, make your own mushroom growing starter kit with urban agriculture experts, before joining Roma the Engineer to get into the nuts and bolts of tomorrow's high-rise buildings.",
         "location": "Jean Baptiste Point du Sable Lake Shore Drive, Chicago, Illinois",
         "map": "https://maps.app.goo.gl/aP9sf65KViMVxCRL7",
         "Highlights": [
@@ -36,7 +36,7 @@
           },
           {
             "id": 3,
-            "title": "Full refund if game is cancelled due to low attendance"
+            "title": "Full refund if game is cancelled due to low attendance"
           }
         ],
         "Hosted by": [
@@ -116,6 +116,53 @@
         "id": 3,
         "image": "/image/banner/image1.png"
       }
+    ],
+    "comments": [
+      {
+        "id": 1,
+        "userId": 1,
+        "userName": "Alex Mercer",
+        "userImage": "/image/banner/imageSlider1.png",
+        "text": "Looking forward to the game! What's the final player count?",
+        "timestamp": "14 min",
+        "replies": [
+          {
+            "id": 1,
+            "userId": 2,
+            "userName": "Rifat Khan",
+            "userImage": "/image/banner/imageSlider1.png",
+            "text": "missing few players",
+            "timestamp": "14 min"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "userId": 2,
+        "userName": "Rifat Khan",
+        "userImage": "/image/banner/imageSlider1.png", 
+        "text": "missing few players",
+        "timestamp": "14 min",
+        "replies": [
+          {
+            "id": 1,
+            "userId": 1,
+            "userName": "Alex Mercer",
+            "userImage": "/image/banner/imageSlider1.png",
+            "text": "missing few players",
+            "timestamp": "14 min"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "userId": 2,
+        "userName": "Rifat Khan",
+        "userImage": "/image/banner/imageSlider1.png",
+        "text": "got any friends?",
+        "timestamp": "14 min",
+        "replies": []
+      }
     ]
   },
   {
@@ -132,7 +179,7 @@
         "gender": "Female",
         "age": "Below 25",
         "type": "Advanced",
-        "about": "Learn about the capital’s first beavers in 400 years from the Ealing Beaver project, make your own mushroom growing starter kit with urban agriculture experts, before joining Roma the Engineer to get into the nuts and bolts of tomorrow’s high-rise buildings.",
+        "about": "Learn about the capital's first beavers in 400 years from the Ealing Beaver project, make your own mushroom growing starter kit with urban agriculture experts, before joining Roma the Engineer to get into the nuts and bolts of tomorrow's high-rise buildings.",
         "location": "Jean Baptiste Point du Sable Lake Shore Drive, Chicago, Illinois",
         "map": "https://maps.app.goo.gl/aP9sf65KViMVxCRL7",
         "Highlights": [
@@ -155,7 +202,7 @@
           },
           {
             "id": 3,
-            "title": "Full refund if game is cancelled due to low attendance"
+            "title": "Full refund if game is cancelled due to low attendance"
           }
         ],
         "Hosted by": [
@@ -251,7 +298,7 @@
         "gender": "Female",
         "age": "Below 25",
         "type": "Advanced",
-        "about": "Learn about the capital’s first beavers in 400 years from the Ealing Beaver project, make your own mushroom growing starter kit with urban agriculture experts, before joining Roma the Engineer to get into the nuts and bolts of tomorrow’s high-rise buildings.",
+        "about": "Learn about the capital's first beavers in 400 years from the Ealing Beaver project, make your own mushroom growing starter kit with urban agriculture experts, before joining Roma the Engineer to get into the nuts and bolts of tomorrow's high-rise buildings.",
         "location": "Jean Baptiste Point du Sable Lake Shore Drive, Chicago, Illinois",
         "map": "https://maps.app.goo.gl/aP9sf65KViMVxCRL7",
         "Highlights": [
@@ -274,7 +321,7 @@
           },
           {
             "id": 3,
-            "title": "Full refund if game is cancelled due to low attendance"
+            "title": "Full refund if game is cancelled due to low attendance"
           }
         ],
         "Hosted by": [
