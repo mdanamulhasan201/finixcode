@@ -81,6 +81,35 @@ The main application code is in the `app` directory. Key files and directories i
 - Carousel functionality with react-slick
 - Toast notifications with react-hot-toast
 
+## Technologies & Tools Used
+
+### Core Technologies
+- **Next.js 15.3.1** - React framework for production
+- **React 18.2.0** - JavaScript library for building user interfaces
+- **TypeScript** - For type-safe code
+- **TailwindCSS** - For utility-first styling
+
+### UI Components & Design
+- **Radix UI** - Unstyled, accessible components
+  - @radix-ui/react-dialog
+  - @radix-ui/react-popover
+  - @radix-ui/react-slot
+- **class-variance-authority** - For managing component variants
+- **clsx & tailwind-merge** - For conditional CSS classes
+- **Lucide React** - Beautiful icons
+- **React Icons** - Comprehensive icon library
+
+### Functionality & Features
+- **date-fns** - Modern JavaScript date utility library
+- **react-slick & slick-carousel** - For carousel/slider functionality
+- **react-hot-toast** - For beautiful notifications
+- **react-day-picker** - For date picking functionality
+
+### Development Tools
+- **ESLint** - For code linting
+- **TurboRepo** - For development optimization
+- **tw-animate-css** - For Tailwind animations
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
