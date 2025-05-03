@@ -1,7 +1,7 @@
-
 import { useState } from 'react';
 import { BannerData, PlayerItem } from '@/types';
 import { FaUsers } from 'react-icons/fa';
+import MessageModal from '../shared/MessageModal';
 
 interface PlayerPageProps {
     currentEvent: BannerData;
@@ -10,16 +10,14 @@ interface PlayerPageProps {
 export default function PlayerPage({ currentEvent }: PlayerPageProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedPlayer, setSelectedPlayer] = useState<PlayerItem | null>(null);
-    const [message, setMessage] = useState('');
 
     const handleMessageClick = (player: PlayerItem) => {
         setSelectedPlayer(player);
         setIsModalOpen(true);
     };
 
-    const handleSendMessage = () => {
+    const handleSendMessage = (message: string) => {
         console.log('Sending message to:', selectedPlayer?.name, 'Message:', message);
-        setMessage('');
         setIsModalOpen(false);
     };
 
@@ -53,37 +51,12 @@ export default function PlayerPage({ currentEvent }: PlayerPageProps) {
                 ))}
             </div>
 
-            {/* Message Modal */}
-            {isModalOpen && (
-                <div className="fixed inset-0 bg-black/40 bg-opacity-50 flex items-center justify-center">
-                    <div className="bg-white p-6 rounded-lg w-96">
-                        <h3 className="text-lg font-semibold mb-4">
-                            Send message to {selectedPlayer?.name}
-                        </h3>
-                        <textarea
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            className="w-full border border-gray-300 rounded-lg p-2 mb-4"
-                            rows={4}
-                            placeholder="Type your message..."
-                        />
-                        <div className="flex justify-end gap-2">
-                            <button
-                                onClick={() => setIsModalOpen(false)}
-                                className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
-                            >
-                                Cancel
-                            </button>
-                            <button
-                                onClick={handleSendMessage}
-                                className="px-4 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-800"
-                            >
-                                Send
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
+            <MessageModal 
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                onSend={handleSendMessage}
+                recipientName={selectedPlayer?.name || ''}
+            />
         </div>
     );
 }

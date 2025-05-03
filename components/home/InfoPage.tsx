@@ -4,13 +4,25 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { MdAccessTime, MdOutlineDateRange, MdOutlineLocationOn } from 'react-icons/md';
 import { TbAntennaBars5, TbAntennaBars3 } from 'react-icons/tb';
+import MessageModal from '../shared/MessageModal';
 
 interface InfoPageProps {
     currentEvent: BannerData;
 }
 
+interface HostData {
+    id: number;
+    name: string;
+    image: string;
+    "activities hosted": string;
+    "host rating": string;
+    description?: string;
+}
+
 export default function InfoPage({ currentEvent }: InfoPageProps) {
     const [expandedAbout, setExpandedAbout] = useState<{ [key: string | number]: boolean }>({});
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedHost, setSelectedHost] = useState<HostData | null>(null);
 
     const getFirstTwoWords = (text: string) => {
         return text.split(' ').slice(0, 40).join(' ') + '...';
@@ -21,6 +33,16 @@ export default function InfoPage({ currentEvent }: InfoPageProps) {
             ...prev,
             [id]: !prev[id]
         }));
+    };
+
+    const handleMessageClick = (host: HostData) => {
+        setSelectedHost(host);
+        setIsModalOpen(true);
+    };
+
+    const handleSendMessage = (message: string) => {
+        console.log('Sending message to host:', selectedHost?.name, 'Message:', message);
+        setIsModalOpen(false);
     };
 
     return (
@@ -145,7 +167,10 @@ export default function InfoPage({ currentEvent }: InfoPageProps) {
                                     <p className="text-sm text-white">{host["host rating"]} host rating</p>
                                 </div>
                                 <div className="flex flex-col md:flex-row gap-2 md:ml-auto md:space-x-2 w-full md:w-auto">
-                                    <button className="w-full md:w-auto px-[24px] py-[10px] border border-gray-300 bg-[#FDE8CD] rounded-full text-[14px] md:text-[16px] font-[500]">
+                                    <button 
+                                        onClick={() => handleMessageClick(host)}
+                                        className="w-full md:w-auto px-[24px] py-[10px] border border-gray-300 bg-[#FDE8CD] rounded-full text-[14px] md:text-[16px] font-[500]"
+                                    >
                                         Message
                                     </button>
                                     <button className="w-full md:w-auto px-[24px] py-[10px] border text-white border-[#FDE8CD] rounded-full text-[14px] md:text-[16px] font-[500]">
@@ -157,6 +182,13 @@ export default function InfoPage({ currentEvent }: InfoPageProps) {
                     </div>
                 </div>
             ))}
+
+            <MessageModal 
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                onSend={handleSendMessage}
+                recipientName={selectedHost?.name || ''}
+            />
         </div>
     );
 } 
