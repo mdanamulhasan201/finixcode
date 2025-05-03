@@ -51,20 +51,6 @@ yarn build
 pnpm build
 ```
 
-
-
-### Additional Scripts
-
-- `npm run lint` - Run ESLint to check code quality
-- `npm run vercel-build` - Special build script for Vercel deployment
-
-## Project Structure
-
-The main application code is in the `app` directory. Key files and directories include:
-- `app/page.tsx` - Main page component
-- `app/components/` - Reusable React components
-- `app/styles/` - CSS and styling files
-
 ## Features
 
 - Modern UI components using Radix UI
