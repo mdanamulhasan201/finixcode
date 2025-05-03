@@ -3,6 +3,7 @@ import { BannerData } from '@/types';
 import { useState } from 'react';
 import Link from 'next/link';
 import { MdAccessTime, MdOutlineDateRange, MdOutlineLocationOn } from 'react-icons/md';
+import { TbAntennaBars5, TbAntennaBars3 } from 'react-icons/tb';
 
 interface InfoPageProps {
     currentEvent: BannerData;
@@ -27,19 +28,26 @@ export default function InfoPage({ currentEvent }: InfoPageProps) {
             {currentEvent?.Info && currentEvent.Info.map((info) => (
                 <div key={info.id} className="space-y-6">
                     {/* Sports, Gender, Age */}
-                    <div className="flex flex-wrap gap-2 border-b border-[#E5E5E5] pb-6">
-                        {info.title.split(',').map((sport, idx) => (
-                            <span key={idx} className="bg-blue-100 text-[#4A4A4A] px-[24px] py-[14px] rounded-[48px] text-[16px]">
-                                {sport.trim()}
+                    <div className="flex justify-between items-center gap-2 border-b border-[#E5E5E5] pb-6">
+                        <div className='flex flex-wrap gap-2'>
+                            {info.title.split(',').map((sport, idx) => (
+                                <span key={idx} className="bg-blue-100 text-[#4A4A4A] px-[24px] py-[14px] rounded-[48px] text-[16px]">
+                                    {sport.trim()}
+                                </span>
+                            ))}
+                            <span className="bg-pink-100 px-[20px] py-[14px] rounded-[48px]  text-[#4A4A4A]   text-[16px]">
+                                {info.gender}
                             </span>
-                        ))}
-                        <span className="bg-pink-100 px-[24px] py-[14px] rounded-[48px]  text-[#4A4A4A]   text-[16px]">
-                            {info.gender}
-                        </span>
-                        <span className="bg-[#EFEDFF] text-[#4A4A4A] px-[24px] py-[14px] rounded-[48px] text-[16px]">
-                            Age: {info.age}
-                        </span>
-                        <span className="bg-green-100 text-[#4A4A4A] px-[24px] py-[14px] rounded-[48px] text-[16px]">
+                            <span className="bg-[#EFEDFF] text-[#4A4A4A] px-[20px] py-[14px] rounded-[48px] text-[16px]">
+                                Age: {info.age}
+                            </span>
+                        </div>
+                        <span className="bg-green-100 text-[#4A4A4A] px-[20px] py-[14px] rounded-[48px] text-[16px] flex items-center gap-2">
+                            {info.type === 'Advanced' ? (
+                                <TbAntennaBars5 className="text-2xl text-green-500" />
+                            ) : (
+                                <TbAntennaBars3 className="text-2xl text-green-500" />
+                            )}
                             {info.type}
                         </span>
                     </div>
@@ -121,8 +129,8 @@ export default function InfoPage({ currentEvent }: InfoPageProps) {
                     <div>
                         <h3 className="text-xl font-semibold mb-4">Hosted by</h3>
                         {info["Hosted by"].map((host) => (
-                            <div key={host.id} className="flex items-center space-x-4 bg-[#4E566B] py-[37px] px-[16px] rounded-lg">
-                                <div className='w-[100px] h-[100px]'>
+                            <div key={host.id} className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 bg-[#4E566B] py-6 md:py-[37px] px-4 md:px-[16px] rounded-lg">
+                                <div className='w-[80px] h-[80px] md:w-[100px] md:h-[100px]'>
                                     <Image
                                         width={100}
                                         height={100}
@@ -131,16 +139,16 @@ export default function InfoPage({ currentEvent }: InfoPageProps) {
                                         className="w-full h-full rounded-full object-cover"
                                     />
                                 </div>
-                                <div className='space-y-1'>
-                                    <h4 className="font-medium text-[24px] text-white">{host.name}</h4>
+                                <div className='space-y-1 text-center md:text-left'>
+                                    <h4 className="font-medium text-[20px] md:text-[24px] text-white">{host.name}</h4>
                                     <p className="text-sm text-white">{host["activities hosted"]} activities hosted</p>
                                     <p className="text-sm text-white">{host["host rating"]} host rating</p>
                                 </div>
-                                <div className="ml-auto space-x-2">
-                                    <button className="px-[24px] py-[10px] border border-gray-300 bg-[#FDE8CD] rounded-full text-[16px] font-[500]">
+                                <div className="flex flex-col md:flex-row gap-2 md:ml-auto md:space-x-2 w-full md:w-auto">
+                                    <button className="w-full md:w-auto px-[24px] py-[10px] border border-gray-300 bg-[#FDE8CD] rounded-full text-[14px] md:text-[16px] font-[500]">
                                         Message
                                     </button>
-                                    <button className="px-[24px] py-[10px] border text-white border-[#FDE8CD] rounded-full text-[16px] font-[500]">
+                                    <button className="w-full md:w-auto px-[24px] py-[10px] border text-white border-[#FDE8CD] rounded-full text-[14px] md:text-[16px] font-[500]">
                                         View profile
                                     </button>
                                 </div>
