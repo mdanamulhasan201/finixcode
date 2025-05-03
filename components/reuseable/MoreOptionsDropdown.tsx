@@ -2,7 +2,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { HiOutlineDotsVertical } from "react-icons/hi"
 import { MdOutlineReport } from "react-icons/md"
-import { IoShareOutline } from "react-icons/io5"
 import { RiUserUnfollowLine } from "react-icons/ri"
 
 export default function MoreOptionsDropdown() {
@@ -42,16 +41,7 @@ export default function MoreOptionsDropdown() {
                             <MdOutlineReport className="w-5 h-5 text-gray-500" />
                             <span>Report this event</span>
                         </button>
-                        <button 
-                            className="w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-50 flex items-center gap-3"
-                            onClick={() => {
-                                console.log('Share');
-                                setIsOpen(false);
-                            }}
-                        >
-                            <IoShareOutline className="w-5 h-5 text-gray-500" />
-                            <span>Share</span>
-                        </button>
+                     
                         <button 
                             className="w-full px-4 py-3 text-left text-red-600 hover:bg-gray-50 flex items-center gap-3"
                             onClick={() => {

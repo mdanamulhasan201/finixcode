@@ -10,11 +10,13 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { TbAntennaBars5, TbAntennaBars3 } from 'react-icons/tb';
 import { FaLocationDot } from 'react-icons/fa6';
 import toast from 'react-hot-toast';
-import { useState } from 'react';
+
 
 interface EventCarouselProps {
     events: BannerData[];
     onEventSelect: (event: BannerData) => void;
+    favorites: { [key: number]: boolean };
+    onFavoriteToggle: (eventId: number) => void;
 }
 
 const ImageCarousel = ({ images, title }: { images: { id: number; image: string }[]; title: string }) => {
@@ -65,9 +67,8 @@ const ImageCarousel = ({ images, title }: { images: { id: number; image: string 
     );
 };
 
-export default function EventCarousel({ events, onEventSelect }: EventCarouselProps) {
+export default function EventCarousel({ events, onEventSelect, favorites, onFavoriteToggle }: EventCarouselProps) {
     const sliderRef = useRef<Slider>(null);
-    const [favorites, setFavorites] = useState<{ [key: number]: boolean }>({});
 
     const settings = {
         dots: false,
@@ -119,37 +120,6 @@ export default function EventCarousel({ events, onEventSelect }: EventCarouselPr
         onEventSelect(event);
     };
 
-    const handleFavoriteClick = (e: React.MouseEvent, eventId: number) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        const isFavorite = favorites[eventId];
-        setFavorites(prev => ({
-            ...prev,
-            [eventId]: !isFavorite
-        }));
-
-        if (!isFavorite) {
-            toast.success('Added to favorites!', {
-                duration: 2000,
-                position: 'top-right',
-                style: {
-                    background: '#34735F',
-                    color: '#fff',
-                },
-            });
-        } else {
-            toast.success('Removed from favorites!', {
-                duration: 2000,
-                position: 'top-right',
-                style: {
-                    background: '#DA6049',
-                    color: '#fff',
-                },
-            });
-        }
-    };
-
     const goToNext = () => {
         if (sliderRef.current) {
             sliderRef.current.slickNext();
@@ -194,7 +164,30 @@ export default function EventCarousel({ events, onEventSelect }: EventCarouselPr
                                         <ImageCarousel images={event.bannerImage} title={event.title} />
                                         <button
                                             className="absolute top-4 right-4 z-10 w-8 h-8 bg-white rounded-full flex items-center justify-center transition-opacity"
-                                            onClick={(e) => handleFavoriteClick(e, event.id)}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                onFavoriteToggle(event.id);
+                                                if (!favorites[event.id]) {
+                                                    toast.success('Added to favorites!', {
+                                                        duration: 2000,
+                                                        position: 'top-right',
+                                                        style: {
+                                                            background: '#34735F',
+                                                            color: '#fff',
+                                                        },
+                                                    });
+                                                } else {
+                                                    toast.success('Removed from favorites!', {
+                                                        duration: 2000,
+                                                        position: 'top-right',
+                                                        style: {
+                                                            background: '#DA6049',
+                                                            color: '#fff',
+                                                        },
+                                                    });
+                                                }
+                                            }}
                                         >
                                             {favorites[event.id] ? (
                                                 <FaHeart className="w-4 h-4 text-red-500" />

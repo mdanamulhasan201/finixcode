@@ -11,7 +11,6 @@ import InfoPage from './InfoPage'
 import PlayerPage from './PlayerPage'
 import CommentsPage from './CommentsPage'
 import EventCarousel from '../reuseable/EventCarousel'
-import toast from 'react-hot-toast'
 import ShareDropdown from '../reuseable/ShareDropdown'
 
 export default function HomePage() {
@@ -24,7 +23,7 @@ export default function HomePage() {
         allEvents: []
     });
     const [activeTab, setActiveTab] = useState<'Info' | 'Player' | 'Comments'>('Info');
-    const [isFavorite, setIsFavorite] = useState(false);
+    const [favorites, setFavorites] = useState<{ [key: number]: boolean }>({});
 
     useEffect(() => {
         try {
@@ -96,6 +95,13 @@ export default function HomePage() {
         console.log('Joining event...');
     };
 
+    const handleFavoriteToggle = (eventId: number) => {
+        setFavorites(prev => ({
+            ...prev,
+            [eventId]: !prev[eventId]
+        }));
+    };
+
     // Only render if we have valid data and images
     if (!eventData.currentEvent ||
         !eventData.allImages.bannerImages.length ||
@@ -139,30 +145,9 @@ export default function HomePage() {
                                     <ShareDropdown />
                                     <button 
                                         className='w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50'
-                                        onClick={() => {
-                                            setIsFavorite(!isFavorite);
-                                            if (!isFavorite) {
-                                                toast.success('Added to favorites!', {
-                                                    duration: 2000,
-                                                    position: 'top-right',
-                                                    style: {
-                                                        background: '#34735F',
-                                                        color: '#fff',
-                                                    },
-                                                });
-                                            } else {
-                                                toast.success('Removed from favorites!', {
-                                                    duration: 2000,
-                                                    position: 'top-right',
-                                                    style: {
-                                                        background: '#DA6049',
-                                                        color: '#fff',
-                                                    },
-                                                });
-                                            }
-                                        }}
+                                        onClick={() => handleFavoriteToggle(eventData.currentEvent?.id || 0)}
                                     >
-                                        {isFavorite ? (
+                                        {favorites[eventData.currentEvent?.id || 0] ? (
                                             <FaHeart className="w-5 h-5 text-red-500" />
                                         ) : (
                                             <FaRegHeart className="w-5 h-5 text-gray-700" />
@@ -251,6 +236,8 @@ export default function HomePage() {
             <EventCarousel 
                 events={eventData.allEvents} 
                 onEventSelect={handleEventSelect}
+                favorites={favorites}
+                onFavoriteToggle={handleFavoriteToggle}
             />
         </div>
     )
