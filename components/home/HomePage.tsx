@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import Banner from '../reuseable/banner'
 import data from '../../public/data/data.json'
-import { AllEventData, BannerData } from '@/types'
-import { formatEventTime } from '@/utils/dateFormat'
+import { AllEventData, BannerData } from '../../types'
+import { formatEventTime } from '../../utils/dateFormat'
 import { FaRegHeart, FaHeart } from "react-icons/fa"
 import JoinEventDropdown from '../reuseable/JoinEventDropdown'
 import MoreOptionsDropdown from '../reuseable/MoreOptionsDropdown'
